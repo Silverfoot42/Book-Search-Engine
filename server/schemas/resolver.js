@@ -21,7 +21,7 @@ const resolvers = {
   },
 
   Mutation: {
-    createUser: async (_, { userInput }) => {
+    addUser: async (_, { userInput }) => {
       try {
         const user = await User.create(userInput);
         
@@ -78,7 +78,7 @@ const resolvers = {
       }
     },
 
-    deleteBook: async (_, { bookId }, { user }) => {
+    removeBook: async (_, { bookId }, { user }) => {
       try {
         const updatedUser = await User.findOneAndUpdate(
           { _id: user._id },
